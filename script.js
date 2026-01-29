@@ -1,41 +1,39 @@
 const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
-const mainHeading = document.getElementById('main-heading');
 const bearImg = document.getElementById('bear-img');
 const music = document.getElementById('song');
 
 const noTexts = [
     "No", "Are you sure?", "Really sure??", "Think again!", 
-    "Last chance!", "Surely not?", "You might regret this!", 
-    "Give it another thought!", "Are you absolutely sure?", 
-    "This could be a mistake!", "Have a heart!", 
-    "Don't be so cold!", "Change of heart?", 
-    "Is that your final answer?", "You're breaking my heart ;("
+    "Last chance!", "Surely not?", "Pookie please!", 
+    "Don't do this!", "Have a heart!", "No :("
 ];
 
 let noCount = 0;
+let scale = 1;
 
 noBtn.addEventListener('click', () => {
     noCount++;
     
-    // 1. Change the text of the No button
+    // 1. Change No text
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
-    } else {
-        noBtn.innerText = "No :(";
     }
 
-    // 2. Make the Yes button bigger
-    const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-    yesBtn.style.fontSize = (currentSize * 1.4) + "px";
-    yesBtn.style.padding = (currentSize * 0.8) + "px " + (currentSize * 1.2) + "px";
+    // 2. Make Yes bigger (Scale it up)
+    scale += 0.4;
+    yesBtn.style.transform = `scale(${scale})`;
+    
+    // 3. Move the No button slightly so it doesn't get covered
+    const x = (Math.random() - 0.5) * 100;
+    const y = (Math.random() - 0.5) * 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 yesBtn.addEventListener('click', () => {
-    mainHeading.innerHTML = "Yay!!! ❤️❤️❤️";
-    bearImg.src = "https://media.tenor.com/gU_Pb_7p_5YAAAAj/mochi-mochi-peach-cat-cat.gif"; // Happy cat
-    document.querySelector('.buttons').style.display = 'none';
-    document.getElementById('sub-text').style.display = 'none';
+    document.getElementById('main-heading').innerHTML = "Yay!!! ❤️";
+    bearImg.src = "https://media.tenor.com/gU_Pb_7p_5YAAAAj/mochi-mochi-peach-cat-cat.gif";
+    document.querySelector('.button-wrapper').style.display = 'none';
 });
 
 function playMusic() {
