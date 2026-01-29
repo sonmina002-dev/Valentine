@@ -1,62 +1,47 @@
 body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(#bdefff, #87cefa);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #bde0fe; /* Light blue from your photo */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 .container {
-  text-align: center;
-  background: rgba(255,255,255,0.85);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 250px;
 }
 
-h1 {
-  font-size: 48px;
-  color: #4aa3df;
-}
-
-h2 {
-  color: #333;
-}
-
-p {
-  font-style: italic;
-  color: #555;
-}
+h1 { color: #4895ef; font-size: 24px; }
+p { color: #333; font-size: 14px; margin-bottom: 20px; }
 
 .buttons {
-  margin-top: 20px;
-  position: relative;
-  height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 button {
-  padding: 15px 30px;
-  font-size: 20px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-#yesBtn {
-  background: #4aa3df;
-  color: white;
-}
+#yesBtn { background-color: #8ecae6; color: white; }
+#noBtn { background-color: #ffafcc; color: white; position: absolute; }
 
-#noBtn {
-  background: #ff9aa2;
-  color: white;
-  position: absolute;
-}
-
-.play {
-  margin-top: 20px;
-  background: #6ec6ff;
-  color: white;
+.play-btn {
+    background-color: #a2d2ff;
+    color: white;
+    width: 100%;
 }
