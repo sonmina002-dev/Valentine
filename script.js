@@ -5,7 +5,7 @@ const music = document.getElementById('song');
 
 const noTexts = [
     "No", "Are you sure?", "Really sure??", "Think again!", 
-    "Pookie please!", "Don't do this!", "No :("
+    "Pookie please!", "No :("
 ];
 
 let noCount = 0;
@@ -13,7 +13,7 @@ let scale = 1;
 
 function startApp() {
     document.getElementById('overlay').style.display = 'none';
-    music.play().catch(e => console.log("Music error:", e));
+    music.play();
 }
 
 noBtn.addEventListener('click', () => {
@@ -21,6 +21,7 @@ noBtn.addEventListener('click', () => {
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
+    // Growing effect from the video
     scale += 0.4;
     yesBtn.style.transform = `scale(${scale})`;
 });
