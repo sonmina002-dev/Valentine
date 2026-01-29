@@ -5,30 +5,32 @@ const music = document.getElementById('song');
 
 const noTexts = [
     "No", "Are you sure?", "Really sure??", "Think again!", 
-    "Last chance!", "Pookie please!", "No :("
+    "Pookie please!", "Don't do this!", "No :("
 ];
 
 let noCount = 0;
+let scale = 1;
 
-// Function to handle auto-play bypass
-function startMusic() {
-    music.play().catch(e => console.log("Audio waiting for interaction"));
+// Function to start music and hide overlay
+function startApp() {
+    document.getElementById('overlay').style.display = 'none';
+    music.play();
 }
 
 noBtn.addEventListener('click', () => {
-    startMusic(); 
     noCount++;
+    
+    // 1. Change No button text
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
-    // No button moves slightly to stay fun, but Yes stays same size
-    const x = (Math.random() - 0.5) * 50;
-    const y = (Math.random() - 0.5) * 50;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+
+    // 2. Make Yes bigger (like the video)
+    scale += 0.4;
+    yesBtn.style.transform = `scale(${scale})`;
 });
 
 yesBtn.addEventListener('click', () => {
-    startMusic();
     document.getElementById('main-heading').innerHTML = "Yay!!! ❤️";
     document.getElementById('sub-text').style.display = 'none';
     bearImg.src = "https://media.tenor.com/gU_Pb_7p_5YAAAAj/mochi-mochi-peach-cat-cat.gif";
