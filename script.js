@@ -15,23 +15,24 @@ let scale = 1;
 noBtn.addEventListener('click', () => {
     noCount++;
     
-    // 1. Change No text
+    // 1. Change No button text
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
 
-    // 2. Make Yes bigger (Scale it up)
-    scale += 0.4;
+    // 2. Make Yes bigger
+    scale += 0.35;
     yesBtn.style.transform = `scale(${scale})`;
     
-    // 3. Move the No button slightly so it doesn't get covered
-    const x = (Math.random() - 0.5) * 100;
-    const y = (Math.random() - 0.5) * 100;
+    // 3. Move the No button slightly so it isn't hidden by the growing Yes
+    const x = (Math.random() - 0.5) * 80;
+    const y = (Math.random() - 0.5) * 80;
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 yesBtn.addEventListener('click', () => {
     document.getElementById('main-heading').innerHTML = "Yay!!! ❤️";
+    document.getElementById('sub-text').style.display = 'none';
     bearImg.src = "https://media.tenor.com/gU_Pb_7p_5YAAAAj/mochi-mochi-peach-cat-cat.gif";
     document.querySelector('.button-wrapper').style.display = 'none';
 });
