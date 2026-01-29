@@ -5,8 +5,7 @@ const music = document.getElementById('song');
 
 const noTexts = [
     "No", "Are you sure?", "Really sure??", "Think again!", 
-    "Last chance!", "Surely not?", "Pookie please!", 
-    "Don't do this!", "Have a heart!", "No :("
+    "Last chance!", "Pookie please!", "No :("
 ];
 
 let noCount = 0;
@@ -15,18 +14,18 @@ let scale = 1;
 noBtn.addEventListener('click', () => {
     noCount++;
     
-    // 1. Change No button text
+    // Change No text
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
 
-    // 2. Make Yes bigger
-    scale += 0.35;
+    // Grow Yes button
+    scale += 0.3;
     yesBtn.style.transform = `scale(${scale})`;
     
-    // 3. Move the No button slightly so it isn't hidden by the growing Yes
-    const x = (Math.random() - 0.5) * 80;
-    const y = (Math.random() - 0.5) * 80;
+    // Move No button slightly so it doesn't get covered
+    const x = (Math.random() - 0.5) * 60;
+    const y = (Math.random() - 0.5) * 60;
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
