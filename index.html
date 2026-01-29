@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For YMT 💙</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For YMT 💙</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio id="song" src="Video_20260110123926209_by_VideoShow_20260110123950504_a01.mp3" loop></audio>
 
-<audio id="song" src="Video_20260110123926209_by_VideoShow_20260110123950504_a01.mp3" loop></audio>
+    <div class="container">
+        <div id="image-section">
+            <img id="bear-img" src="https://media.tenor.com/j8ae-q9Z69QAAAAAj/mochi-peach-cat-cat.gif" alt="Bear">
+        </div>
+        <h1 id="main-heading">YMT 💙</h1>
+        <p id="sub-text">Will you be my Valentine? <br> — HHK</p>
+        
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
 
-<div class="container">
-  <h1>YMT 💙</h1>
-  <h2>Will you be my Valentine?</h2>
-  <p>— HHK</p>
+        <button class="play-btn" onclick="playMusic()">Play Music ♫</button>
+    </div>
 
-  <div class="buttons">
-    <button id="yesBtn">YES 💖</button>
-    <button id="noBtn">NO 🙈</button>
-  </div>
-
-  <button class="play" onclick="p
+    <script src="script.js"></script>
+</body>
+</html>
