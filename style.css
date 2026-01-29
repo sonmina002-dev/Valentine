@@ -28,10 +28,10 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     width: 320px;
-    height: 550px;
+    height: 580px; /* Slightly taller to fit the gap */
     display: flex;
     flex-direction: column;
-    position: relative; /* This keeps the text relative to THIS box */
+    position: relative;
 }
 
 .fixed-text {
@@ -39,7 +39,7 @@ body {
     top: 20px;
     right: 20px;
     text-align: right;
-    pointer-events: none; /* So it doesn't block button clicks */
+    pointer-events: none;
 }
 
 h1 { color: #4895ef; margin: 0; font-size: 22px; }
@@ -48,7 +48,7 @@ p { color: #555; margin: 0; font-size: 13px; font-weight: bold; }
 #bear-img {
     width: 140px;
     align-self: center;
-    margin-top: 100px; /* Space for the pinned text */
+    margin-top: 80px;
 }
 
 .button-wrapper {
@@ -56,9 +56,9 @@ p { color: #555; margin: 0; font-size: 13px; font-weight: bold; }
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-top: auto;
-    margin-bottom: 60px;
+    gap: 60px; /* Increased gap to move Yes up and No down */
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 button {
@@ -69,7 +69,17 @@ button {
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
+    position: relative;
 }
 
-#yesBtn { background-color: #4CAF50; color: white; transition: 0.1s; }
-#noBtn { background-color: #f44336; color: white; }
+#yesBtn { 
+    background-color: #4CAF50; 
+    color: white; 
+    transition: 0.1s; 
+    z-index: 10;
+}
+
+#noBtn { 
+    background-color: #f44336; 
+    color: white; 
+}
