@@ -21,7 +21,7 @@ noBtn.addEventListener('click', () => {
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
-    // Growing effect from the video
+    // Yes button grows
     scale += 0.4;
     yesBtn.style.transform = `scale(${scale})`;
 });
