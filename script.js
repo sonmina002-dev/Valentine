@@ -11,10 +11,9 @@ const noTexts = [
 let noCount = 0;
 let scale = 1;
 
-// Function to start music and hide overlay
 function startApp() {
     document.getElementById('overlay').style.display = 'none';
-    music.play();
+    music.play().catch(e => console.log("Music error:", e));
 }
 
 noBtn.addEventListener('click', () => {
@@ -25,7 +24,7 @@ noBtn.addEventListener('click', () => {
         noBtn.innerText = noTexts[noCount];
     }
 
-    // 2. Make Yes bigger (like the video)
+    // 2. Make Yes bigger
     scale += 0.4;
     yesBtn.style.transform = `scale(${scale})`;
 });
