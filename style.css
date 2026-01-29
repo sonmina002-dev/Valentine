@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #bde0fe;
+    background-color: #bde0fe; /* Light blue background */
     font-family: sans-serif;
     overflow: hidden;
 }
@@ -15,41 +15,44 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     width: 320px;
-    height: 450px; /* Fixed height so text never moves */
+    height: 480px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .content {
-    text-align: right; /* Text stays on the far right */
+    text-align: right; /* Pins text to the far right */
     width: 100%;
 }
 
 #bear-img {
-    width: 140px;
+    width: 160px;
+    height: auto;
     align-self: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
-h1 { color: #4895ef; margin: 0; font-size: 26px; }
-p { color: #555; margin: 5px 0; font-size: 16px; }
+h1 { color: #4895ef; margin: 0; font-size: 28px; }
+p { color: #555; margin-top: 5px; font-size: 16px; font-weight: bold; }
 
 .button-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: auto; /* Keeps buttons at the bottom */
-    margin-bottom: 30px;
+    gap: 20px;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
 button {
-    padding: 12px 25px;
+    padding: 12px 28px;
     border: none;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 18px;
 }
 
-#yesBtn { background-color: #4CAF50; color: white; transition: none; }
+#yesBtn { background-color: #4CAF50; color: white; }
 #noBtn { background-color: #f44336; color: white; }
