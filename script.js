@@ -21,7 +21,6 @@ noBtn.addEventListener('click', () => {
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
-    // Yes button grows from its higher position
     scale += 0.4;
     yesBtn.style.transform = `scale(${scale})`;
 });
@@ -31,7 +30,4 @@ yesBtn.addEventListener('click', () => {
     document.getElementById('sub-text').style.display = 'none';
     bearImg.src = "https://media.tenor.com/gU_Pb_7p_5YAAAAj/mochi-mochi-peach-cat-cat.gif";
     document.querySelector('.button-wrapper').style.display = 'none';
-    document.querySelector('.fixed-text').style.textAlign = 'center';
-    document.querySelector('.fixed-text').style.right = '50%';
-    document.querySelector('.fixed-text').style.transform = 'translateX(50%)';
 });
