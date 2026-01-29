@@ -9,27 +9,26 @@ const noTexts = [
 ];
 
 let noCount = 0;
-let musicStarted = false;
 
+// Function to handle auto-play bypass
 function startMusic() {
-    if (!musicStarted) {
-        music.play();
-        musicStarted = true;
-    }
+    music.play().catch(e => console.log("Audio waiting for interaction"));
 }
 
 noBtn.addEventListener('click', () => {
-    startMusic(); // Plays music on first click
+    startMusic(); 
     noCount++;
-    
-    // Change No text but DO NOT grow Yes button
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
+    // No button moves slightly to stay fun, but Yes stays same size
+    const x = (Math.random() - 0.5) * 50;
+    const y = (Math.random() - 0.5) * 50;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 yesBtn.addEventListener('click', () => {
-    startMusic(); // Plays music if they click Yes immediately
+    startMusic();
     document.getElementById('main-heading').innerHTML = "Yay!!! ❤️";
     document.getElementById('sub-text').style.display = 'none';
     bearImg.src = "https://media.tenor.com/gU_Pb_7p_5YAAAAj/mochi-mochi-peach-cat-cat.gif";
