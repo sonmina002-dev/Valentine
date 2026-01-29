@@ -18,13 +18,9 @@ function startApp() {
 
 noBtn.addEventListener('click', () => {
     noCount++;
-    
-    // 1. Change No button text
     if (noCount < noTexts.length) {
         noBtn.innerText = noTexts[noCount];
     }
-
-    // 2. Make Yes bigger
     scale += 0.4;
     yesBtn.style.transform = `scale(${scale})`;
 });
