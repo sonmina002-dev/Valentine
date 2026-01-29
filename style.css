@@ -28,7 +28,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     width: 320px;
-    height: 580px; /* Slightly taller to fit the gap */
+    height: 600px; /* Slightly taller for more movement space */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -48,17 +48,17 @@ p { color: #555; margin: 0; font-size: 13px; font-weight: bold; }
 #bear-img {
     width: 140px;
     align-self: center;
-    margin-top: 80px;
+    margin-top: 70px; /* Bear stays high */
 }
 
 .button-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns items to the top of the wrapper */
     align-items: center;
-    gap: 60px; /* Increased gap to move Yes up and No down */
-    margin-top: 30px;
-    margin-bottom: 40px;
+    gap: 90px; /* Huge gap to move No button far down */
+    margin-top: 10px; /* Moves the Yes button much closer to the bear */
+    flex-grow: 1;
 }
 
 button {
@@ -69,7 +69,6 @@ button {
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
-    position: relative;
 }
 
 #yesBtn { 
@@ -81,5 +80,6 @@ button {
 
 #noBtn { 
     background-color: #f44336; 
-    color: white; 
+    color: white;
+    margin-bottom: 20px; /* Keeps No button from hitting the very bottom */
 }
