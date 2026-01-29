@@ -1,32 +1,31 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const song = document.getElementById("song");
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const heading = document.getElementById('main-heading');
+const music = document.getElementById('song');
 
-function playSong() {
-  song.play();
+let yesSize = 1;
+
+// Make the NO button move when hovered or touched
+noBtn.addEventListener('mouseover', moveButton);
+noBtn.addEventListener('touchstart', moveButton);
+
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+    
+    // Make the YES button grow every time they try to hit NO
+    yesSize += 0.2;
+    yesBtn.style.transform = `scale(${yesSize})`;
 }
 
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 100 - 50;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+// What happens when they click YES
+yesBtn.addEventListener('click', () => {
+    heading.innerHTML = "Yay! See you soon! ❤️";
+    document.querySelector('.buttons').style.display = 'none';
 });
 
-yesBtn.addEventListener("click", () => {
-  document.body.innerHTML = `
-    <div style="
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      background:linear-gradient(#bdefff,#87cefa);
-      font-family:Arial;
-    ">
-      <h1 style="color:#4aa3df;font-size:50px;">YAY 💙</h1>
-      <h2>YMT said YES 💕</h2>
-      <p>Forever yours,<br>HHK</p>
-    </div>
-  `;
-  song.play();
-});
+function playMusic() {
+    music.play();
+}
