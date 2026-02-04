@@ -28,7 +28,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     width: 320px;
-    height: 600px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -36,20 +36,15 @@ body {
 
 .fixed-text {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 25px;
     text-align: right;
     pointer-events: none;
 }
 
-h1 { color: #4895ef; margin: 0; font-size: 24px; }
-p { color: #555; margin: 0; font-size: 14px; font-weight: bold; }
+#sub-text { color: #555; margin: 0; font-size: 16px; font-weight: bold; }
 
-#bear-img {
-    width: 160px;
-    align-self: center;
-    margin-top: 80px;
-}
+#bear-img { width: 160px; align-self: center; margin-top: 80px; }
 
 .button-wrapper {
     display: flex;
@@ -57,7 +52,7 @@ p { color: #555; margin: 0; font-size: 14px; font-weight: bold; }
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 50px;
 }
 
@@ -71,15 +66,5 @@ button {
     font-size: 18px;
 }
 
-#yesBtn { 
-    background-color: #4CAF50; 
-    color: white; 
-    transition: 0.1s; 
-    z-index: 10;
-    margin-top: -30px; /* Pulls Yes high under the bear */
-}
-
-#noBtn { 
-    background-color: #f44336; 
-    color: white;
-}
+#yesBtn { background-color: #4CAF50; color: white; transition: 0.1s; z-index: 10; margin-top: -20px; }
+#noBtn { background-color: #f44336; color: white; }
